@@ -22,8 +22,8 @@ public class pichauCompra {
         nav.findElement(By.id("password")).sendKeys("valtech9753");
         nav.findElement(By.xpath("//div[@id='__next']/main/div/div/div/div/div/form/button/span")).click();
         nav.findElement(By.xpath("//img[@alt='Pichau']")).click();
-        nav.findElement(By.cssSelector(".slide___3-Nqo:nth-child(1) .MuiTypography-root")).click();
-        Assert.assertEquals(nav.findElement(By.cssSelector(".content-title")).getText(), "CADEIRA GAMER THUNDERX3 TGC12 PRETO, TGC12 PT/PT");
+        nav.findElement(By.cssSelector("//div[@id='__next']/main/div[3]/section/div/div/div/ul/li/div/a/div/div[3]/h2")).click();
+        Assert.assertEquals(nav.findElement(By.xpath("//div[@id='__next']/main/div[2]/div/div[2]/h1")).getText(), "CADEIRA GAMER THUNDERX3 TGC12 PRETO, TGC12 PT/PT");
         nav.findElement(By.xpath("//div[@id='__next']/main/div[2]/div/div[2]/div[4]/div[2]/div/button/span")).click();
         nav.findElement(By.cssSelector(".jss16 .MuiButton-label")).click();
         nav.findElement(By.xpath("(//input[@id='my-input'])[2]")).click();
@@ -34,7 +34,7 @@ public class pichauCompra {
         nav.findElement(By.name("shipping_address")).click();
         nav.findElement(By.cssSelector(".MuiButton-containedSecondary > .MuiButton-label")).click();
         nav.findElement(By.cssSelector(".MuiButton-contained > .MuiButton-label")).click();
-        Assert.assertEquals(nav.findElement(By.cssSelector(".content-title")).getText(), "Revise seu pedido e finalize!");
+        Assert.assertEquals(nav.findElement(By.xpath("//div[@id='__next']/main/div[3]/div/div/div/div/h2")).getText(), "Revise seu pedido e finalize!");
         nav.findElement(By.xpath("//img[@alt='Pichau']")).click();
         nav.findElement(By.linkText("sair")).click();
 
