@@ -4,22 +4,26 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class pichauCompra {
 
     WebDriver nav = new ChromeDriver();
+    String url = "https://www.pichau.com.br";
+    String email = "test.valtech2023@gmail.com";
+    String senha = "valtech9753";
 
     @Test
-    public void testScreen() {
-        nav.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+    public void simulandoCompra() {
+        nav.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         nav.manage().window().maximize();
-        nav.get("https://www.pichau.com.br");
+        nav.get(url);
         nav.findElement(By.xpath("//a[contains(text(),'Entrar')]")).click();
         nav.findElement(By.id("username")).click();
-        nav.findElement(By.id("username")).sendKeys("test.valtech2023@gmail.com");
+        nav.findElement(By.id("username")).sendKeys(email);
         nav.findElement(By.id("password")).click();
-        nav.findElement(By.id("password")).sendKeys("valtech9753");
+        nav.findElement(By.id("password")).sendKeys(senha);
         nav.findElement(By.xpath("//div[@id='__next']/main/div/div/div/div/div/form/button/span")).click();
         nav.findElement(By.xpath("//img[@alt='Pichau']")).click();
         nav.findElement(By.cssSelector("//div[@id='__next']/main/div[3]/section/div/div/div/ul/li/div/a/div/div[3]/h2")).click();
